@@ -1,0 +1,16 @@
+def read_line(n, file):
+    try:
+        data = open(file)
+        lines = data.readlines()
+        type(lines)
+        linecount = 0
+        for line in lines:
+            linecount = linecount + 1
+        if type(n) != int:
+            return ("invalid input detected")
+        if n > linecount:
+            return (" " + "line " + str(n) + " doesn't exist")
+        else:
+            return (str(lines[n - 1].rstrip()))
+    except:
+        return ("file not found")
